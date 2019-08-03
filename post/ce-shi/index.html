@@ -12,9 +12,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564817102257">
+<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564817129065">
 <link rel="stylesheet" href="https://lujunzhi.com/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -29,7 +35,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://lujunzhi.com">
-        <img class="avatar" src="https://lujunzhi.com/images/avatar.png?v=1564817102257" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://lujunzhi.com/images/avatar.png?v=1564817129065" alt="" width="32px" height="32px">
       </a>
       <a href="https://lujunzhi.com">
         <h1 class="site-title">没好好学走路-blog</h1>
@@ -94,6 +100,12 @@
       </div>
 
       
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
 
       <div class="site-footer">
   <div class="slogan">没好好学走路</div>
@@ -127,6 +139,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '517d76508b8662cad609',
+        clientSecret: 'ddbab34b1592c8a5071ca36bf260624410a68753',
+        repo: 'comment',
+        owner: 'junzhiStephen',
+        admin: ['junzhiStephen'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
