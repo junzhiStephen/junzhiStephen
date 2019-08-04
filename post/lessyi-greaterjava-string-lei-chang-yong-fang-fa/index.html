@@ -5,9 +5,9 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    呼叫浩祥，浩祥 | 没好好学走路-blog
+    &lt;一&gt;Java String类常用方法 | 没好好学走路-blog
 </title>
-<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564841904502">
+<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564928316328">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://lujunzhi.com">
-                <img class="avatar" src="https://lujunzhi.com/images/avatar.png?v=1564841904502" alt="">
+                <img class="avatar" src="https://lujunzhi.com/images/avatar.png?v=1564928316328" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -98,34 +98,86 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            呼叫浩祥，浩祥
+                            &lt;一&gt;Java String类常用方法
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-08-03</time>
+                            <time class="post-time">2019-08-04</time>
                             
                                 <a href="https://lujunzhi.com/tag/ondmNsPTH" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-">
                             #java学习之路
                         </a>
                                 
                         </div>
                         
+                            <div class="post-feature-image" style="background-image: url('https://lujunzhi.com/post-images/lessyi-greaterjava-string-lei-chang-yong-fang-fa.png')"></div>
+                            
                                 <div class="post-content">
-                                    <p>99999999</p>
+                                    <p><strong>一、String 类的特性·</strong>：
+1.字符串一旦被创建就不可被修改，并被存放在字符串池中被公共访问，
+2.新建字符会先在字符串中查找，若有则添加应用，没有则新建。</p>
+<p><strong>二、建立字符串的两种方法以及区别</strong>
+1.String str = new String(&quot;nba&quot;);
+这里新建了两个对象，一个是String类对象，一个是被String对象包含的“nba”字符串对象。
+2.String str1 = &quot;nba&quot;
+只有字符串对象，两者并不相同。
+例如：</p>
+<pre><code>	public static void main(String[] args) 
+{
+	String str1 = &quot;abc&quot;;
+	String str = new String(&quot;abc&quot;);
+	//比较
+	System.out.println(str1==&quot;abc&quot;);
+	//true
+	System.out.println(str==&quot;abc&quot;);
+	//false
+	System.out.println(str1==str);
+	//false
+}
+</code></pre>
+<p><strong>三、字符串的常用方法</strong></p>
+<pre><code>public static void stringDemo2()
+	{
+		String abc = &quot;ggefweweger&quot;;
+		String s = &quot;张数,李四,王五,分无单,四大欠&quot;;
+		
+		System.out.println(abc.length());
+		//输出字符串长度：11
+		System.out.println(&quot;char: &quot;+abc.charAt(2));
+		//输出对应下标的字符：e
+		System.out.println(&quot;index: &quot;+abc.indexOf('w'));
+		//寻找对应字符第一次出现的位置：4
+		System.out.println(&quot;lastindexOf: &quot;+abc.lastIndexOf('g'));
+		//于上同样，但查找顺序为从后到前，输出：8
+		System.out.println(&quot;substring: &quot;+abc.substring(3,6));
+		//输出字符串子集，包前不包后：fwe
+		String[] arr = s.split(&quot;\\,&quot;);
+		// 分割字符串为字符串组·
+		System.out.println(arr[2]);
+		//输出：王五
+		char[] gg = abc.toCharArray();
+		//将字符串分解为字符数组；
+		String s2 =&quot;&quot;;
+		for(int i = 0;i&lt;abc.length();i++)
+		{
+			s2=s2+&quot; &quot;+gg[i];
+		}
+		System.out.println(s2);
+	//输出结果为：	g g e f w e w e g e r
+		System.out.println(abc.toUpperCase());
+		//将字符串变为全大写，对应小写的方法还有toLowerCase()，输出：GGEFWEWEGER
+		System.out.println(&quot;java&quot;.replace('a','b'));
+		//替换字符方法输出：jbjb
+		System.out.println(&quot; abc  &quot;.trim());
+		//去除字符前后的空格·，输出：abc
+	}
+}
+</code></pre>
 
                                 </div>
                     </article>
                     <!--  -->
                     
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://lujunzhi.com/post/hu-jiao-li-jie-hu-jiao-li-jie">
-                                <h3 class="post-title">
-                                    呼叫李杰，呼叫李杰
-                                </h3>
-                            </a>
-                        </div>
-                        
                             <div id="disqus_thread"></div>
                             <div id="gitalk-container"></div>
                 </div>
@@ -137,7 +189,7 @@
                                 <!-- id-card -->
                                 
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://lujunzhi.com/images/avatar.png?v=1564841904502)">
+        <div class="id_card-avatar" style="background-image: url(https://lujunzhi.com/images/avatar.png?v=1564928316328)">
         </div>
         <h1 class="id_card-title">
             没好好学走路-blog
