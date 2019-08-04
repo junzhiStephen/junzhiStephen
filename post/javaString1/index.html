@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>gg | 没好好学走路-blog</title>
+<title>&lt;一&gt;Java String类常用方法 | 没好好学走路-blog</title>
 <meta name="description" content="没好好学走路">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564930783877">
+<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564931170858">
 <link rel="stylesheet" href="https://lujunzhi.com/styles/main.css">
 
 
@@ -35,7 +35,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://lujunzhi.com">
-        <img src="https://lujunzhi.com/images/avatar.png?v=1564930783877" class="site-logo">
+        <img src="https://lujunzhi.com/images/avatar.png?v=1564931170858" class="site-logo">
         <h1 class="site-title">没好好学走路-blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -91,23 +91,84 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">gg</h2>
+            <h2 class="post-title">&lt;一&gt;Java String类常用方法</h2>
             <div class="post-date">2019-08-04</div>
             
+              <div class="feature-container" style="background-image: url('https://lujunzhi.com/post-images/javaString1.jpg')">
+              </div>
+            
             <div class="post-content">
-              <p>gg</p>
+              <p><strong>一、String 类的特性·</strong>：<br/>
+1.字符串一旦被创建就不可被修改，并被存放在字符串池中被公共访问。<br/>
+2..新建字符会先在字符串中查找，若有则添加应用，没有则新建。<br/></p>
+<p><strong>二、建立字符串的两种方法以及区别</strong><br/>
+1.String str = new String(&quot;nba&quot;);<br/>
+这里新建了两个对象，一个是String类对象，一个是被String对象包含的“nba”字符串对象。<br/>
+2.String str1 = &quot;nba&quot;<br/>
+只有字符串对象，两者并不相同。<br/>
+例如：<br/></p>
+<pre><code>	public static void main(String[] args) 
+{
+	String str1 = &quot;abc&quot;;
+	String str = new String(&quot;abc&quot;);
+	//比较
+	System.out.println(str1==&quot;abc&quot;);
+	//true
+	System.out.println(str==&quot;abc&quot;);
+	//false
+	System.out.println(str1==str);
+	//false
+}
+</code></pre>
+<p><strong>三、字符串的常用方法</strong><br/></p>
+<pre><code>public static void stringDemo2()
+	{
+		String abc = &quot;ggefweweger&quot;;
+		String s = &quot;张数,李四,王五,分无单,四大欠&quot;;
+		
+		System.out.println(abc.length());
+		//输出字符串长度：11
+		System.out.println(&quot;char: &quot;+abc.charAt(2));
+		//输出对应下标的字符：e
+		System.out.println(&quot;index: &quot;+abc.indexOf('w'));
+		//寻找对应字符第一次出现的位置：4
+		System.out.println(&quot;lastindexOf: &quot;+abc.lastIndexOf('g'));
+		//于上同样，但查找顺序为从后到前，输出：8
+		System.out.println(&quot;substring: &quot;+abc.substring(3,6));
+		//输出字符串子集，包前不包后：fwe
+		String[] arr = s.split(&quot;\\,&quot;);
+		// 分割字符串为字符串组·
+		System.out.println(arr[2]);
+		//输出：王五
+		char[] gg = abc.toCharArray();
+		//将字符串分解为字符数组；
+		String s2 =&quot;&quot;;
+		for(int i = 0;i&lt;abc.length();i++)
+		{
+			s2=s2+&quot; &quot;+gg[i];
+		}
+		System.out.println(s2);
+	//输出结果为：	g g e f w e w e g e r
+		System.out.println(abc.toUpperCase());
+		//将字符串变为全大写，对应小写的方法还有toLowerCase()，输出：GGEFWEWEGER
+		System.out.println(&quot;java&quot;.replace('a','b'));
+		//替换字符方法输出：jbjb
+		System.out.println(&quot; abc  &quot;.trim());
+		//去除字符前后的空格·，输出：abc
+	}
+}
+</code></pre>
 
             </div>
             
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://lujunzhi.com/post/lessyi-greaterjava-string-lei-chang-yong-fang-fa">
-                  <h3 class="post-title">
-                    &lt;一&gt;Java String类常用方法
-                  </h3>
-                </a>
+              <div class="tag-container">
+                
+                  <a href="https://lujunzhi.com/tag/ondmNsPTH" class="tag">
+                    java学习之路
+                  </a>
+                
               </div>
+            
             
 
             
