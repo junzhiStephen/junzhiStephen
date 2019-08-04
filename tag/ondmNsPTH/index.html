@@ -1,248 +1,140 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    java学习之路 | 没好好学走路-blog
-</title>
-<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564929054260">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<title>java学习之路 | 没好好学走路-blog</title>
+<meta name="description" content="没好好学走路">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564929193481">
 <link rel="stylesheet" href="https://lujunzhi.com/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://lujunzhi.com/media/js/jquery.sticky-sidebar.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
-</head>
 
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://lujunzhi.com">
-                <img class="avatar" src="https://lujunzhi.com/images/avatar.png?v=1564929054260" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    没好好学走路-blog
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lujunzhi.com">
+        <img src="https://lujunzhi.com/images/avatar.png?v=1564929193481" class="site-logo">
+        <h1 class="site-title">没好好学走路-blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-    <div class="i-card">
-        <b>标签：#
-        java学习之路</b>
-    </div>
-    
+    <div>
+      
         
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://lujunzhi.com/post/lessyi-greaterjava-string-lei-chang-yong-fang-fa">
-                        &lt;一&gt;Java String类常用方法
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-04</time>
-                    
-                        <a href="https://lujunzhi.com/tag/ondmNsPTH" class="post-tag i-tag
-                            i-tag-banana">
-            #java学习之路
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                        <a href="https://lujunzhi.com/post/lessyi-greaterjava-string-lei-chang-yong-fang-fa" class="post-feature-image" style="background-image:url(https://lujunzhi.com/post-images/lessyi-greaterjava-string-lei-chang-yong-fang-fa.jpg) ">
-                        </a>
-                        
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            一、String 类的特性·：
-1.字符串一旦被创建就不可被修改，并被存放在字符串池中被公共访问。
-2..新建字符会先在字符串中查找，若有则添加应用，没有则新建。
-二、建立字符串的两种方法以及区别
-1.String str = new String(&amp;quot;nba&amp;quot;);\n
-这里新建了两个对象，一个是String类对象，一个是被String对象包含的“nba”字符串对象。
-2.String str1 = &amp;quot;nba&amp;quot;
-只有字符串对象，两者并不相同。
-例如：
-	public static void main(String[] args) 
-{
-	String str1 = &amp;quot;abc&amp;quot;;
-	String str = new String(&amp;quot;abc&amp;quot;);
-	//比较
-	System.out.println(str1==&amp;quot;abc&amp;quot;);
-	//true
-	System.out.println(str==&amp;quot;abc&amp;quot;);
-	//false
-	System.out.println(str1==str);
-	//false
-}
-
-三、字符串的常用方法
-public static void stringDemo2()
-	{
-		String abc = &amp;quot;ggefweweger&amp;quot;;
-		String s = &amp;quot;张数,李四,王五,分无单,四大欠&amp;quot;;
-		
-		System.out.println(abc.length());
-		//输出字符串长度：11
-		System.out.println(&amp;quot;char: &amp;quot;+abc.charAt(2));
-		//输出对应下标的字符：e
-		System.out.println(&amp;quot;index: &amp;quot;+abc.indexOf(&#39;w&#39;));
-		//寻找对应字符第一次出现的位置：4
-		System.out.println(&amp;quot;lastindexOf: &amp;quot;+abc.lastIndexOf(&#39;g&#39;));
-		//于上同样，但查找顺序为从后到前，输出：8
-		System.out.println(&amp;quot;substring: &amp;quot;+abc.substring(3,6));
-		//输出字符串子集，包前不包后：fwe
-		String[] arr = s.split(&amp;quot;\\,&amp;quot;);
-		// 分割字符串为字符串组·
-		System.out.println(arr[2]);
-		//输出：王五
-		char[] gg = abc.toCharArray();
-		//将字符串分解为字符数组；
-		String s2 =&amp;quot;&amp;quot;;
-		for(int i = 0;i&amp;lt;abc.length();i++)
-		{
-			s2=s2+&amp;quot; &amp;quot;+gg[i];
-		}
-		System.out.println(s2);
-	//输出结果为：	g g e f w e w e g e r
-		System.out.println(abc.toUpperCase());
-		//将字符串变为全大写，对应小写的方法还有toLowerCase()，输出：GGEFWEWEGER
-		System.out.println(&amp;quot;java&amp;quot;.replace(&#39;a&#39;,&#39;b&#39;));
-		//替换字符方法输出：jbjb
-		System.out.println(&amp;quot; abc  &amp;quot;.trim());
-		//去除字符前后的空格·，输出：abc
-	}
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://lujunzhi.com/post/lessyi-greaterjava-string-lei-chang-yong-fang-fa">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://lujunzhi.com/images/avatar.png?v=1564929054260)">
-        </div>
-        <h1 class="id_card-title">
-            没好好学走路-blog
-        </h1>
-        <h2 class="id_card-description">
-            没好好学走路
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
-
-        </div>
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
     </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  学海无涯，唯有坚持 | 
-  <a class="rss" href="https://lujunzhi.com/atom.xml" target="_blank">RSS</a>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      没好好学走路
+    </div>
+    <div class="site-footer">
+      学海无涯，唯有坚持
+    </div>
+  </div>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: java学习之路</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://lujunzhi.com/post/lessyi-greaterjava-string-lei-chang-yong-fang-fa">
+                  <h2 class="post-title">&lt;一&gt;Java String类常用方法</h2>
+                </a>
+                <div class="post-date">
+                  2019-08-04
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://lujunzhi.com/post/lessyi-greaterjava-string-lei-chang-yong-fang-fa">
+                  <div class="feature-container" style="background-image: url('https://lujunzhi.com/post-images/lessyi-greaterjava-string-lei-chang-yong-fang-fa.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-</body>
 
+
+
+  </body>
 </html>

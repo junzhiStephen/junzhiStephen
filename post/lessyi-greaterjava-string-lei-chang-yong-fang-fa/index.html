@@ -1,119 +1,104 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    &lt;一&gt;Java String类常用方法 | 没好好学走路-blog
-</title>
-<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564929054260">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<title>&lt;一&gt;Java String类常用方法 | 没好好学走路-blog</title>
+<meta name="description" content="没好好学走路">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lujunzhi.com/favicon.ico?v=1564929193481">
 <link rel="stylesheet" href="https://lujunzhi.com/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://lujunzhi.com/media/js/jquery.sticky-sidebar.min.js"></script>
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
 
-                    
-                            
-</head>
+  </head>
+  <body>
+    <div id="app" class="main">
 
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://lujunzhi.com">
-                <img class="avatar" src="https://lujunzhi.com/images/avatar.png?v=1564929054260" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    没好好学走路-blog
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lujunzhi.com">
+        <img src="https://lujunzhi.com/images/avatar.png?v=1564929193481" class="site-logo">
+        <h1 class="site-title">没好好学走路-blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      没好好学走路
+    </div>
+    <div class="site-footer">
+      学海无涯，唯有坚持
+    </div>
+  </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
 
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            &lt;一&gt;Java String类常用方法
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2019-08-04</time>
-                            
-                                <a href="https://lujunzhi.com/tag/ondmNsPTH" class="post-tag i-tag
-                            i-tag-other_2">
-                            #java学习之路
-                        </a>
-                                
-                        </div>
-                        
-                            <div class="post-feature-image" style="background-image: url('https://lujunzhi.com/post-images/lessyi-greaterjava-string-lei-chang-yong-fang-fa.jpg')"></div>
-                            
-                                <div class="post-content">
-                                    <p><strong>一、String 类的特性·</strong>：<br/>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">&lt;一&gt;Java String类常用方法</h2>
+            <div class="post-date">2019-08-04</div>
+            
+              <div class="feature-container" style="background-image: url('https://lujunzhi.com/post-images/lessyi-greaterjava-string-lei-chang-yong-fang-fa.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p><strong>一、String 类的特性·</strong>：<br/>
 1.字符串一旦被创建就不可被修改，并被存放在字符串池中被公共访问。<br/>
 2..新建字符会先在字符串中查找，若有则添加应用，没有则新建。<br/></p>
 <p><strong>二、建立字符串的两种方法以及区别</strong><br/>
@@ -174,91 +159,74 @@
 }
 </code></pre>
 
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://lujunzhi.com/images/avatar.png?v=1564929054260)">
-        </div>
-        <h1 class="id_card-title">
-            没好好学走路-blog
-        </h1>
-        <h2 class="id_card-description">
-            没好好学走路
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
-
-        </div>
-    </div>
-    
-                                    
-
-                </div>
-
-
-
-
             </div>
-
-
-            <div class="site-footer">
-  学海无涯，唯有坚持 | 
-  <a class="rss" href="https://lujunzhi.com/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
-        
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: '517d76508b8662cad609',
-            clientSecret: 'ddbab34b1592c8a5071ca36bf260624410a68753',
-            repo: 'comment',
-            owner: 'junzhiStephen',
-            admin: ['junzhiStephen'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
-
-        gitalk.render('gitalk-container')
-    }
-</script>
+            
+              <div class="tag-container">
                 
+                  <a href="https://lujunzhi.com/tag/ondmNsPTH" class="tag">
+                    java学习之路
+                  </a>
+                
+              </div>
+            
+            
 
-                    
-                                
-</body>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
 
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '517d76508b8662cad609',
+        clientSecret: 'ddbab34b1592c8a5071ca36bf260624410a68753',
+        repo: 'comment',
+        owner: 'junzhiStephen',
+        admin: ['junzhiStephen'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
 </html>
