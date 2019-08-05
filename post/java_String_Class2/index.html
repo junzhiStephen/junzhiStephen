@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>&lt;一&gt;Java String类常用方法 | 没好好学走路-blog</title>
+<title>&lt;二&gt;Java String类常用方法 | 没好好学走路-blog</title>
 <meta name="description" content="没好好学走路">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -91,72 +91,53 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">&lt;一&gt;Java String类常用方法</h2>
-            <div class="post-date">2019-08-04</div>
-            
-              <div class="feature-container" style="background-image: url('https://lujunzhi.com/post-images/javaString1.jpg')">
-              </div>
+            <h2 class="post-title">&lt;二&gt;Java String类常用方法</h2>
+            <div class="post-date">2019-08-05</div>
             
             <div class="post-content">
-              <p><strong>一、String 类的特性·</strong>：<br/>
-1.字符串一旦被创建就不可被修改，并被存放在字符串池中被公共访问。<br/>
-2..新建字符会先在字符串池中查找，若有则添加应用，没有则新建。<br/></p>
-<p><strong>二、建立字符串的两种方法以及区别</strong><br/>
-1.String str = new String(&quot;nba&quot;);<br/>
-这里新建了两个对象，一个是String类对象，一个是被String对象包含的“nba”字符串对象。<br/>
-2.String str1 = &quot;nba&quot;<br/>
-只有字符串对象，两者并不相同。<br/>
-例如：<br/></p>
-<pre><code>	public static void main(String[] args) 
-{
-	String str1 = &quot;abc&quot;;
-	String str = new String(&quot;abc&quot;);
-	//比较
-	System.out.println(str1==&quot;abc&quot;);
-	//true
-	System.out.println(str==&quot;abc&quot;);
-	//false
-	System.out.println(str1==str);
-	//false
-}
-</code></pre>
-<p><strong>三、字符串的常用方法</strong><br/></p>
-<pre><code>public static void stringDemo2()
+              <h1 id="1求两个字符串中最大相同的部分getmaxstring">1.求两个字符串中最大相同的部分getMaxString</h1>
+<pre><code>public static String getMaxString(String str,String str1)
 	{
-		String abc = &quot;ggefweweger&quot;;
-		String s = &quot;张数,李四,王五,分无单,四大欠&quot;;
-		
-		System.out.println(abc.length());
-		//输出字符串长度：11
-		System.out.println(&quot;char: &quot;+abc.charAt(2));
-		//输出对应下标的字符：e
-		System.out.println(&quot;index: &quot;+abc.indexOf('w'));
-		//寻找对应字符第一次出现的位置：4
-		System.out.println(&quot;lastindexOf: &quot;+abc.lastIndexOf('g'));
-		//于上同样，但查找顺序为从后到前，输出：8
-		System.out.println(&quot;substring: &quot;+abc.substring(3,6));
-		//输出字符串子集，包前不包后：fwe
-		String[] arr = s.split(&quot;\\,&quot;);
-		// 分割字符串为字符串组·
-		System.out.println(arr[2]);
-		//输出：王五
-		char[] gg = abc.toCharArray();
-		//将字符串分解为字符数组；
-		String s2 =&quot;&quot;;
-		for(int i = 0;i&lt;abc.length();i++)
+		String max=null,min=null;
+		max = (str.length()&gt;str1.length()?str:str1);
+		min = max.equals(str)?str1:str;
+		for(int x = 0;x&lt;min.length();x++)
 		{
-			s2=s2+&quot; &quot;+gg[i];
+			for(int a=0,b=min.length()-x;b!=min.length()+1;a++,b++)
+			{
+				String sub = str1.substring(a, b);
+				if(max.contains(sub))
+				{
+					return sub;
+				}
+			}
 		}
-		System.out.println(s2);
-	//输出结果为：	g g e f w e w e g e r
-		System.out.println(abc.toUpperCase());
-		//将字符串变为全大写，对应小写的方法还有toLowerCase()，输出：GGEFWEWEGER
-		System.out.println(&quot;java&quot;.replace('a','b'));
-		//替换字符方法输出：jbjb
-		System.out.println(&quot; abc  &quot;.trim());
-		//去除字符前后的空格·，输出：abc
+		return null ;
 	}
-}
+</code></pre>
+<pre><code>		String str = &quot;wegergggqfeh&quot;;
+		String str1 = &quot;rtjwqwgggg&quot;;
+		System.out.println(getMaxString(str, str1));
+		//输出ggg
+</code></pre>
+<h1 id="2去除字符串中两端的空格delempty">2.去除字符串中两端的空格delEmpty</h1>
+<pre><code>public static String delEmpty(String s )
+	{
+		int start = 0 ,end = s.length()-1;
+		while(start&lt;=end &amp;&amp; s.charAt(start)==' ')
+		{
+			start++;
+		}
+		while(start&lt;=end &amp;&amp; s.charAt(start)==' ' )
+		{
+			end--;
+		}
+		return s.substring(start, end+1);
+	}
+</code></pre>
+<pre><code>		String s =&quot;   wegw   &quot;;
+		System.out.println(delEmpty(s));
+		//输出wegw
 </code></pre>
 
             </div>
@@ -169,6 +150,15 @@
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lujunzhi.com/post/javaString1">
+                  <h3 class="post-title">
+                    &lt;一&gt;Java String类常用方法
+                  </h3>
+                </a>
+              </div>
             
 
             
