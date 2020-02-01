@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>java利用FILE类通过递归的方法遍历文件夹及文件 | 没好好学走路-blog</title>
+<title>Sevlet 笔记 | 没好好学走路-blog</title>
 <meta name="description" content="没好好学走路">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -91,49 +91,68 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">java利用FILE类通过递归的方法遍历文件夹及文件</h2>
-            <div class="post-date">2019-09-17</div>
+            <h2 class="post-title">Sevlet 笔记</h2>
+            <div class="post-date">2020-02-02</div>
             
             <div class="post-content">
-              <p>下述代码遍历桌面中所有文件及各个文件夹下的文件</p>
-```
-import java.io.File;
-<p>public class day40 {</p>
-<pre><code>public static void main(String[] arg)
-{
-	File dir = new File(&quot;C:\\Users\\Administrator\\Desktop&quot; );
-	listDemo(dir);
-}
-
-private static void listDemo(File dir) {
-	// TODO 自动生成的方法存根
-	File[] files = dir.listFiles();
-	for(File file:files)
-	{
-		if(file.isDirectory())
-		{
-			listDemo(file);
-		}
-		else
-		{
-			System.out.println(file);
-		}
-		
-	}
-	System.out.println(files);	
-}
-</code></pre>
-<p>}</p>
-<pre><code></code></pre>
-
+               <p>一、什么Servlet？<br />			　　　　
+	servlet 是运行在 Web 服务器中的小型 Java 程序，通过 HTTP（超文本传输协议）接收和响应来自 Web 客户端的请求。<br />			
+	<br />二、Servilet的生命周期<br />			　　　　
+	实例化	-----&gt;初始化	-----&gt;	服务	-----&gt; 销毁<br />			　　　　
+	服务器创建 &nbsp; &nbsp; init &nbsp; &nbsp;　　　　service	　　			destroy<br />	<br />
+	三、Servlet的三种创建方式<br />
+	实现： javax.servlet.Servlet接口<br />
+	继承： javax.servet.GenericServlet类(适配器模式)<br />	
+	继承： javax.servlet.http.HttpServlet类（模板方法设计模式）<br />	<br />
+	四、Servlet的线程安全<br />
+	解决线程安全问题的最佳办法，不要写全局变量，而写局部变量。<br /><br />
+	五、ServletConfig<br />	
+	获取配置文件的信息<br />	
+	获取ServletContext对象<br />	
+	ServletContext: 代表的是整个应用。一个应用只有一个ServletContext对象。<br />
+		作用：<br />	
+				域对象：在一定范围内（当前应用），使多个Servlet共享数据。</p>
+         <p>	void setAttribute(String name,object value);//向ServletContext对象的map中添加数据<br/>
+	             Object getAttribute(String name);//从ServletContext对象的map中取数据<br />　
+	              void rmoveAttribute(String name);//根据name去移除数据</p>
+<p><br />	
+	获取全局配置信息</p>
+String</a><code> name)</code> //根据配置文件中的key得到value</p>
+<p><br />	获取资源路径</p>
+<p>String &nbsp;getRealPath("/WEB-INF");//根据资源名称得到资源的绝对路径.<br />
+	现Servlet的转发。</p>
+<p>RequestDispatcher getRequestDispatcher(String path) ;//参数表示要跳转到哪去<br />																				forward（request, response）;:向指定Servlet跳转。</p>
+<p><br />	<br />
+	六、Servlet的相关对象<br />
+	javax.Servlet中的<br />	
+	Servlet<br />	
+	GenericServlet<br />
+	ServletConfig<br />	
+	ServletContext<br />
+	ServletRequest<br />
+	ServletResponse<br />
+	javax.Servlet.http中的		<br />
+	HttpServlet<br />	
+	HttpServletRequest<br />	
+	HttpServletResponse<br />
+	java.Sevlet包中的，进行Servlet资源转发的类。		<br />
+	RequestDispatcher</p>
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://lujunzhi.com/tag/ondmNsPTH" class="tag">
+                    java学习之路
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lujunzhi.com/post/java_String_Class2">
+                <a href="https://lujunzhi.com/post/java-li-yong-file-lei-tong-guo-di-gui-de-fang-fa-bian-li-wen-jian-jia-ji-wen-jian">
                   <h3 class="post-title">
-                    &lt;二&gt;Java String类常用方法
+                    java利用FILE类通过递归的方法遍历文件夹及文件
                   </h3>
                 </a>
               </div>
